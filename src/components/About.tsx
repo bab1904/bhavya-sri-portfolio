@@ -30,7 +30,7 @@ export default function About() {
             About <span className="silicon-gradient-text">Bhavya Sri</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
-            Bridging register-transfer logic architecture with deep-submicron physical implementation.
+            Specializing in ASIC backend implementation, floorplanning, CTS, routing, and physical verification signoff.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function About() {
               
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-amber-400" />
-                Physical Design Trainee & Silicon Enthusiast
+                Physical Design Trainee & ASIC Backend Specialist
               </h3>
               
               <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -57,16 +57,16 @@ export default function About() {
               {/* Quick Pillars */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 mt-6 border-t border-slate-800 text-xs font-mono">
                 <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800/80">
-                  <span className="text-cyan-400 font-bold block mb-1">RTL Design</span>
-                  <span className="text-slate-400">Verilog / SystemVerilog FSMs & pipelined datapaths</span>
+                  <span className="text-cyan-400 font-bold block mb-1">Floorplan & PDN</span>
+                  <span className="text-slate-400">Core aspect ratio, macro halos & power mesh synthesis</span>
                 </div>
                 <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800/80">
-                  <span className="text-amber-400 font-bold block mb-1">Synthesis & CTS</span>
-                  <span className="text-slate-400">Logic mapping, skew reduction & insertion latency</span>
+                  <span className="text-amber-400 font-bold block mb-1">Placement & CTS</span>
+                  <span className="text-slate-400">CCOpt skew minimization, latency balancing & buffer sizing</span>
                 </div>
                 <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800/80">
-                  <span className="text-emerald-400 font-bold block mb-1">Signoff STA</span>
-                  <span className="text-slate-400">Setup/Hold closure, MCMM corners & DRC/LVS</span>
+                  <span className="text-emerald-400 font-bold block mb-1">Signoff STA & DRC</span>
+                  <span className="text-slate-400">Setup/Hold closure, MCMM corners & 100% clean DRC/LVS</span>
                 </div>
               </div>
             </div>

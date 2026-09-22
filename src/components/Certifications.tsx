@@ -16,9 +16,9 @@ export default function Certifications() {
 
   const categories = [
     "All",
-    "VLSI & Semiconductor",
-    "EDA & FPGA",
-    "Software & AI",
+    "Physical Design & VLSI",
+    "EDA Toolsuites",
+    "Software & Linux",
     "Core Engineering",
   ];
 

@@ -15,29 +15,28 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bhavya Sri | VLSI Physical Design (PD) & RTL Engineer",
+  title: "Bhavya Sri | VLSI Physical Design (PD) Engineer",
   description:
-    "Portfolio of Bhavya Sri, VLSI Physical Design & RTL Engineer specializing in RTL design, logic synthesis, floorplanning, CTS, routing, and physical verification using industry EDA tools.",
+    "Portfolio of Bhavya Sri, VLSI Physical Design (PD) Engineer specializing in ASIC backend implementation, floorplanning, CTS, routing, STA timing closure, and DRC/LVS physical verification using Cadence Innovus.",
   keywords: [
     "Bhavya Sri",
+    "Physical Design Engineer",
     "VLSI Engineer",
-    "Physical Design",
-    "RTL Engineer",
-    "Verilog",
-    "SystemVerilog",
-    "Cadence Innovus",
-    "Xilinx Vivado",
-    "ASIC Design",
-    "FPGA",
+    "ASIC Backend",
+    "Floorplanning",
     "CTS",
+    "Static Timing Analysis",
     "STA",
+    "Cadence Innovus",
+    "Place and Route",
+    "DRC LVS",
     "RTL to GDSII",
   ],
   authors: [{ name: "Bhavya Sri" }],
   openGraph: {
-    title: "Bhavya Sri | VLSI Physical Design & RTL Engineer",
+    title: "Bhavya Sri | VLSI Physical Design (PD) Engineer",
     description:
-      "Physical Design Trainee @ ChipXpert | Specializing in RTL-to-GDSII workflows, logic synthesis, CTS, routing, and physical verification.",
+      "Physical Design Trainee @ ChipXpert | Specializing in ASIC backend implementation, floorplanning, CTS, routing, STA timing closure, and physical verification.",
     type: "website",
     locale: "en_US",
   },

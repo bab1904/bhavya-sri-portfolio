@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
             
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm font-sans">
-              VLSI Physical Design & RTL Engineer specializing in deep submicron logic synthesis, floorplanning, CTS, and signoff verification.
+              VLSI Physical Design Engineer specializing in ASIC backend implementation, floorplanning, CTS, routing, and signoff verification.
             </p>
 
             <div className="flex items-center gap-3 pt-1">

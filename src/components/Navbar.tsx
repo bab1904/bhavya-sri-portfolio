@@ -74,7 +74,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
                 Bhavya Sri
               </span>
               <span className="text-[11px] font-mono text-cyan-400/80 -mt-1 hidden sm:block">
-                PD & RTL Engineer
+                Physical Design (PD) Engineer
               </span>
             </div>
           </a>

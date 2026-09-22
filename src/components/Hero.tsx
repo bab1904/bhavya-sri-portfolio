@@ -25,7 +25,7 @@ interface HeroProps {
 export default function Hero({ onOpenResume }: HeroProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
-  const [activeTab, setActiveTab] = useState<"floorplan" | "timing" | "verilog">("floorplan");
+  const [activeTab, setActiveTab] = useState<"floorplan" | "timing" | "pnr">("floorplan");
 
   const copyToClipboard = (text: string, type: "email" | "phone") => {
     navigator.clipboard.writeText(text);
@@ -203,15 +203,15 @@ export default function Hero({ onOpenResume }: HeroProps) {
                   <span>Timing & CTS</span>
                 </button>
                 <button
-                  onClick={() => setActiveTab("verilog")}
+                  onClick={() => setActiveTab("pnr")}
                   className={`px-3 py-1.5 rounded-t-lg transition-colors flex items-center gap-1.5 ${
-                    activeTab === "verilog"
+                    activeTab === "pnr"
                       ? "bg-[#0d1629] text-cyan-300 border-t border-x border-cyan-500/40"
                       : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
                   <Terminal className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>RTL Code</span>
+                  <span>Innovus TCL Flow</span>
                 </button>
               </div>
 
@@ -244,7 +244,7 @@ export default function Hero({ onOpenResume }: HeroProps) {
                         {/* Standard Cell Core Logic */}
                         <div className="col-span-4 h-24 bg-slate-900/90 border border-slate-700/60 rounded p-1.5 flex flex-col justify-between relative overflow-hidden">
                           <div className="absolute inset-0 bg-[radial-gradient(#06b6d4_1px,transparent_1px)] [background-size:6px_6px] opacity-30" />
-                          <span className="text-[9px] text-amber-300 font-bold relative z-10">RTL Core</span>
+                          <span className="text-[9px] text-amber-300 font-bold relative z-10">ASIC Core</span>
                           <span className="text-[8px] text-slate-400 relative z-10">StdCells: 85k</span>
                           <span className="text-[8px] text-emerald-400 relative z-10 font-bold">Util: 72.4%</span>
                         </div>
@@ -328,42 +328,37 @@ export default function Hero({ onOpenResume }: HeroProps) {
 
                     {/* Waveform graphic */}
                     <div className="bg-[#070b14] p-3 rounded-lg border border-cyan-500/20">
-                      <span className="text-[10px] text-cyan-400 block mb-1.5">{"// Clock Waveform & Data Path"}</span>
+                      <span className="text-[10px] text-cyan-400 block mb-1.5">{"// CTS Balanced Clock Tree & Skew Margin"}</span>
                       <div className="space-y-2 text-[10px]">
                         <div className="flex items-center gap-2">
-                          <span className="text-slate-400 w-12 shrink-0">clk:</span>
+                          <span className="text-slate-400 w-16 shrink-0">clk_root:</span>
                           <div className="text-cyan-400 tracking-wider">_П_П_П_П_П_П_П_П_</div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-slate-400 w-12 shrink-0">data_in:</span>
-                          <div className="text-amber-400 tracking-wider">===X===X=======X===</div>
+                          <span className="text-slate-400 w-16 shrink-0">clk_leaf_1:</span>
+                          <div className="text-amber-400 tracking-wider">__П_П_П_П_П_П_П_П</div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-slate-400 w-12 shrink-0">q_out:</span>
-                          <div className="text-emerald-400 tracking-wider">_____===X===X======</div>
+                          <span className="text-slate-400 w-16 shrink-0">clk_leaf_2:</span>
+                          <div className="text-emerald-400 tracking-wider">__П_П_П_П_П_П_П_П</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 )}
 
-                {activeTab === "verilog" && (
+                {activeTab === "pnr" && (
                   <div className="bg-[#070b14] p-3 rounded-lg border border-slate-800 text-[11px] leading-relaxed overflow-x-auto">
                     <pre className="text-slate-300">
-                      <span className="text-cyan-400">module</span> <span className="text-amber-300">rtl_pipeline_stage</span> #(
-                      {"\n"}  <span className="text-cyan-400">parameter</span> DATA_WIDTH = 32
-                      {"\n"})(
-                      {"\n"}  <span className="text-cyan-400">input</span>  <span className="text-cyan-400">wire</span> clk, rst_n,
-                      {"\n"}  <span className="text-cyan-400">input</span>  <span className="text-cyan-400">wire</span> [DATA_WIDTH-1:0] din,
-                      {"\n"}  <span className="text-cyan-400">output</span> <span className="text-cyan-400">reg</span>  [DATA_WIDTH-1:0] dout
-                      {"\n"});
-                      {"\n"}
-                      {"\n"}  <span className="text-slate-400">{"// Synchronous register with active-low reset"}</span>
-                      {"\n"}  <span className="text-cyan-400">always</span> @(<span className="text-cyan-400">posedge</span> clk <span className="text-cyan-400">or negedge</span> rst_n) <span className="text-cyan-400">begin</span>
-                      {"\n"}    <span className="text-cyan-400">if</span> (!rst_n) dout &lt;= &apos;{0};
-                      {"\n"}    <span className="text-cyan-400">else</span>       dout &lt;= din;
-                      {"\n"}  <span className="text-cyan-400">end</span>
-                      {"\n"}<span className="text-cyan-400">endmodule</span>
+                      <span className="text-slate-400">{"# Cadence Innovus ASIC Place & Route Flow"}</span>{"\n"}
+                      <span className="text-cyan-400">set_db</span> <span className="text-slate-300">design:top</span> .utilization <span className="text-amber-300">0.72</span>{"\n"}
+                      <span className="text-cyan-400">create_floorplan</span> <span className="text-slate-300">-site CoreSite -core_margins_by die -core_margins 10</span>{"\n"}
+                      <span className="text-cyan-400">add_rings</span> <span className="text-slate-300">-nets {`{VDD VSS}`} -type core_rings -width 4 -spacing 2</span>{"\n"}
+                      <span className="text-cyan-400">place_opt_design</span> <span className="text-slate-300">-congestion -effort high</span>{"\n"}
+                      <span className="text-cyan-400">ccopt_design</span> <span className="text-slate-300">-cts -target_skew 0.030</span>{"\n"}
+                      <span className="text-cyan-400">route_design</span> <span className="text-slate-300">-global_detail -via_opt</span>{"\n"}
+                      <span className="text-cyan-400">opt_design</span> <span className="text-slate-300">-post_route -setup -hold</span>{"\n"}
+                      <span className="text-cyan-400">check_drc</span> <span className="text-slate-300">-out_file drc_signoff.rpt</span>
                     </pre>
                   </div>
                 )}

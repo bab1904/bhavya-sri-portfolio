@@ -18,13 +18,13 @@ export default function Projects() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories = ["All", "VLSI & FPGA", "Embedded & AI"];
+  const categories = ["All", "VLSI & Physical Design", "Embedded & Edge Systems"];
 
   const filteredProjects = portfolioData.projects.filter((project) => {
     const matchesCategory =
       activeCategory === "All" ||
-      (activeCategory === "VLSI & FPGA" &&
-        (project.category === "VLSI & FPGA" || project.category === "Hardware Security")) ||
+      (activeCategory === "VLSI & Physical Design" &&
+        (project.category === "VLSI & Physical Design" || project.category === "Hardware Security")) ||
       project.category === activeCategory;
 
     const matchesSearch =

@@ -21,7 +21,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const handleDownloadText = () => {
     const textContent = `
 ===================================================================
-BHAVYA SRI — VLSI PHYSICAL DESIGN & RTL ENGINEER
+BHAVYA SRI — VLSI PHYSICAL DESIGN ENGINEER
 ===================================================================
 Email: ${portfolioData.personal.email}
 Phone: ${portfolioData.personal.phone}
@@ -148,7 +148,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
                   Bhavya Sri
                 </h1>
                 <p className="text-cyan-400 font-mono text-sm sm:text-base mt-1 font-medium">
-                  Physical Design Trainee @ ChipXpert | VLSI & RTL Engineer
+                  Physical Design Trainee @ ChipXpert | ASIC Backend Specialist
                 </p>
               </div>
               <div className="flex flex-col gap-1 text-xs sm:text-sm text-slate-400 font-mono">
@@ -301,7 +301,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
 
         {/* Footer */}
         <div className="px-6 py-3 border-t border-slate-800 bg-[#090d16] flex justify-between items-center text-xs text-slate-400 font-mono">
-          <span>Bhavya Sri • Physical Design & RTL Engineer</span>
+          <span>Bhavya Sri • VLSI Physical Design Engineer</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors"
