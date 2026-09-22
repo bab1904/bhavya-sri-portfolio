@@ -15,14 +15,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bhavya Sri | VLSI Physical Design (PD) Engineer",
+  title: "Thummalapenta Bhavya Sri | VLSI Physical Design (PD) Engineer",
   description:
-    "Portfolio of Bhavya Sri, VLSI Physical Design (PD) Engineer specializing in ASIC backend implementation, floorplanning, CTS, routing, STA timing closure, and DRC/LVS physical verification using Cadence Innovus.",
+    "Portfolio of Thummalapenta Bhavya Sri, VLSI Physical Design (PD) Engineer specializing in physical implementation, floorplanning, CTS, routing, STA timing closure, and DRC/LVS physical verification using Cadence Innovus.",
   keywords: [
+    "Thummalapenta Bhavya Sri",
     "Bhavya Sri",
     "Physical Design Engineer",
     "VLSI Engineer",
-    "ASIC Backend",
     "Floorplanning",
     "CTS",
     "Static Timing Analysis",
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     "DRC LVS",
     "RTL to GDSII",
   ],
-  authors: [{ name: "Bhavya Sri" }],
+  authors: [{ name: "Thummalapenta Bhavya Sri" }],
   openGraph: {
-    title: "Bhavya Sri | VLSI Physical Design (PD) Engineer",
+    title: "Thummalapenta Bhavya Sri | VLSI Physical Design (PD) Engineer",
     description:
-      "Physical Design Trainee @ ChipXpert | Specializing in ASIC backend implementation, floorplanning, CTS, routing, STA timing closure, and physical verification.",
+      "Physical Design Trainee @ ChipXpert | Specializing in physical implementation, floorplanning, CTS, routing, STA timing closure, and physical verification.",
     type: "website",
     locale: "en_US",
   },

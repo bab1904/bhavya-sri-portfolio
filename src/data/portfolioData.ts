@@ -82,15 +82,14 @@ export interface PDStage {
 
 export const portfolioData = {
   personal: {
-    name: "Bhavya Sri",
+    name: "Thummalapenta Bhavya Sri",
     title: "VLSI Physical Design (PD) Engineer",
-    roleTag: "Physical Design Trainee @ ChipXpert | ASIC Backend & P&R Specialist",
+    roleTag: "Physical Design Trainee @ ChipXpert | VLSI Physical Design Specialist",
     subheadline:
-      "Specializing in ASIC Physical Design, Floorplanning, Power Distribution Networks (PDN), Standard Cell Placement, Clock Tree Synthesis (CTS), Routing, Static Timing Analysis (STA), and Physical Verification (DRC/LVS) using industry-standard EDA tooling.",
+      "Specializing in Physical Design, Floorplanning, Power Distribution Networks (PDN), Standard Cell Placement, Clock Tree Synthesis (CTS), Routing, Static Timing Analysis (STA), and Physical Verification (DRC/LVS) using industry-standard EDA tooling.",
     aboutSummary:
-      "Dedicated B.Tech student in Electronics, Electrical & VLSI Technology specializing in semiconductor Physical Design and ASIC backend implementation. Highly proficient across the complete Physical Design flow: logic synthesis, die floorplanning, power grid design, standard cell placement, clock tree synthesis (CTS), global & detailed routing, static timing analysis (STA), and physical verification (DRC/LVS/ERC). Experienced with industry EDA toolsuites including Cadence Innovus, Cadence Genus, ModelSim, Xilinx Vivado, Linux environments, and TCL automation scripting. Proven track record through hands-on physical design traineeships, MeitY semiconductor programs, and national hackathon championships.",
+      "Dedicated B.Tech student in Electronics, Electrical & VLSI Technology specializing in semiconductor Physical Design and VLSI implementation. Highly proficient across the complete Physical Design flow: logic synthesis, die floorplanning, power grid design, standard cell placement, clock tree synthesis (CTS), global & detailed routing, static timing analysis (STA), and physical verification (DRC/LVS/ERC). Experienced with industry EDA toolsuites including Cadence Innovus, Cadence Genus, ModelSim, Xilinx Vivado, Linux environments, and TCL automation scripting. Proven track record through hands-on physical design traineeships, MeitY semiconductor programs, and national hackathon championships.",
     email: "bhavya9133sri@gmail.com",
-    phone: "+91 9133641193",
     location: "India",
     linkedin: "https://linkedin.com/in/bhavya-sri-7b5646291",
     github: "https://github.com/bab1904/bhavya-sri-portfolio",
@@ -293,7 +292,7 @@ export const portfolioData = {
       type: "Traineeship",
       badgeColor: "cyan",
       description:
-        "Intensive specialization in deep-submicron Physical Design flows, high-performance ASIC backend implementation, floorplanning strategies, clock tree synthesis, and timing signoff closure.",
+        "Intensive specialization in deep-submicron Physical Design flows, high-performance physical implementation, floorplanning strategies, clock tree synthesis, and timing signoff closure.",
       keyResponsibilities: [
         "Hands-on execution of full ASIC Physical Design flow (RTL-to-GDSII) on advanced technology nodes.",
         "Crafting die floorplans, power distribution networks (PDN meshes/rings), and macro placement optimizations.",

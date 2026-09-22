@@ -7,7 +7,6 @@ import {
   Activity,
   ArrowRight,
   Mail,
-  Phone,
   Copy,
   Check,
   Zap,
@@ -24,18 +23,12 @@ interface HeroProps {
 
 export default function Hero({ onOpenResume }: HeroProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
   const [activeTab, setActiveTab] = useState<"floorplan" | "timing" | "pnr">("floorplan");
 
-  const copyToClipboard = (text: string, type: "email" | "phone") => {
+  const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    if (type === "email") {
-      setCopiedEmail(true);
-      setTimeout(() => setCopiedEmail(false), 2000);
-    } else {
-      setCopiedPhone(true);
-      setTimeout(() => setCopiedPhone(false), 2000);
-    }
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
   };
 
   return (
@@ -111,28 +104,13 @@ export default function Hero({ onOpenResume }: HeroProps) {
               <div className="flex flex-wrap gap-2.5">
                 {/* Email Chip */}
                 <button
-                  onClick={() => copyToClipboard(portfolioData.personal.email, "email")}
+                  onClick={() => copyToClipboard(portfolioData.personal.email)}
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-all group"
                   title="Click to copy email"
                 >
                   <Mail className="w-3.5 h-3.5 text-cyan-400" />
                   <span>{portfolioData.personal.email}</span>
                   {copiedEmail ? (
-                    <Check className="w-3 h-3 text-emerald-400" />
-                  ) : (
-                    <Copy className="w-3 h-3 text-slate-400 group-hover:text-cyan-400 transition-colors" />
-                  )}
-                </button>
-
-                {/* Phone Chip */}
-                <button
-                  onClick={() => copyToClipboard(portfolioData.personal.phone, "phone")}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-all group"
-                  title="Click to copy phone number"
-                >
-                  <Phone className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>{portfolioData.personal.phone}</span>
-                  {copiedPhone ? (
                     <Check className="w-3 h-3 text-emerald-400" />
                   ) : (
                     <Copy className="w-3 h-3 text-slate-400 group-hover:text-cyan-400 transition-colors" />

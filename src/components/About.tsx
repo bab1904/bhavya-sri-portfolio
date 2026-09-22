@@ -27,10 +27,10 @@ export default function About() {
             <span>01. Engineering Profile</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            About <span className="silicon-gradient-text">Bhavya Sri</span>
+            About <span className="silicon-gradient-text">Thummalapenta Bhavya Sri</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
-            Specializing in ASIC backend implementation, floorplanning, CTS, routing, and physical verification signoff.
+            Specializing in physical design implementation, floorplanning, CTS, routing, and physical verification signoff.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function About() {
               
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-amber-400" />
-                Physical Design Trainee & ASIC Backend Specialist
+                Physical Design Trainee & VLSI Specialist
               </h3>
               
               <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">

@@ -62,7 +62,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           <a
             href="#"
             className="flex items-center gap-2.5 group focus:outline-none"
-            aria-label="Bhavya Sri Homepage"
+            aria-label="Thummalapenta Bhavya Sri Homepage"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-slate-900 border border-cyan-500/40 flex items-center justify-center group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all duration-300">
               <span className="font-mono font-black text-cyan-400 text-sm tracking-tighter">
@@ -70,8 +70,8 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
               </span>
             </div>
             <div className="flex flex-col">
-              <span className="text-white font-bold tracking-tight text-base group-hover:text-cyan-300 transition-colors">
-                Bhavya Sri
+              <span className="text-white font-bold tracking-tight text-sm sm:text-base group-hover:text-cyan-300 transition-colors">
+                Thummalapenta Bhavya Sri
               </span>
               <span className="text-[11px] font-mono text-cyan-400/80 -mt-1 hidden sm:block">
                 Physical Design (PD) Engineer

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import {
   Mail,
-  Phone,
   Send,
   CheckCircle2,
   Copy,
@@ -79,7 +78,7 @@ export default function Contact({ onOpenResume }: ContactProps) {
             Get In <span className="silicon-gradient-text">Touch</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-xl">
-            Open to Physical Design, RTL Engineering, and VLSI internship & full-time opportunities.
+            Open to VLSI Physical Design (PD) and hardware implementation engineering opportunities.
           </p>
         </div>
 
@@ -93,7 +92,7 @@ export default function Contact({ onOpenResume }: ContactProps) {
                   Let&apos;s build next-gen silicon together
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Whether you are hiring for an ASIC physical design team, collaborating on RTL verification, or seeking technical discussions on VLSI architectures, feel free to reach out directly.
+                  Whether you are hiring for a Physical Design team, collaborating on floorplanning and CTS optimization, or seeking technical discussions on VLSI backend flows, feel free to reach out directly.
                 </p>
               </div>
 
@@ -122,35 +121,6 @@ export default function Contact({ onOpenResume }: ContactProps) {
                     title="Copy Email"
                   >
                     {copiedField === "Email" ? (
-                      <Check className="w-4 h-4 text-emerald-400" />
-                    ) : (
-                      <Copy className="w-4 h-4" />
-                    )}
-                  </button>
-                </div>
-
-                {/* Phone item */}
-                <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between group">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-cyan-950/70 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                      <Phone className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] font-mono text-slate-400 block">Phone / Mobile</span>
-                      <a
-                        href={`tel:${portfolioData.personal.phone}`}
-                        className="text-xs sm:text-sm font-mono text-slate-200 hover:text-cyan-300 transition-colors"
-                      >
-                        {portfolioData.personal.phone}
-                      </a>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => copyToClipboard(portfolioData.personal.phone, "Phone")}
-                    className="p-2 text-slate-400 hover:text-cyan-400 transition-colors"
-                    title="Copy Phone"
-                  >
-                    {copiedField === "Phone" ? (
                       <Check className="w-4 h-4 text-emerald-400" />
                     ) : (
                       <Copy className="w-4 h-4" />

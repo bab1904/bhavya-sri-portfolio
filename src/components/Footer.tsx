@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowUp, Cpu, Mail, Phone } from "lucide-react";
+import { ArrowUp, Cpu, Mail } from "lucide-react";
 import { LinkedinIcon } from "@/components/Icons";
 import { portfolioData } from "@/data/portfolioData";
 
@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
             
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm font-sans">
-              VLSI Physical Design Engineer specializing in ASIC backend implementation, floorplanning, CTS, routing, and signoff verification.
+              VLSI Physical Design Engineer specializing in physical implementation, floorplanning, CTS, routing, and signoff verification.
             </p>
 
             <div className="flex items-center gap-3 pt-1">
@@ -47,13 +47,6 @@ export default function Footer() {
                 title="Email"
               >
                 <Mail className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href={`tel:${portfolioData.personal.phone}`}
-                className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors"
-                title="Phone"
-              >
-                <Phone className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
@@ -119,7 +112,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
-            © {new Date().getFullYear()} Bhavya Sri. All rights reserved.
+            © {new Date().getFullYear()} Thummalapenta Bhavya Sri. All rights reserved.
           </div>
 
           <div className="flex items-center gap-1.5 text-slate-400">
