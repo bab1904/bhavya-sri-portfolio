@@ -112,7 +112,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
-            © {new Date().getFullYear()} Thummalapenta Bhavya Sri. All rights reserved.
+            © {new Date().getFullYear()} Tummalapenta Bhavya Sri. All rights reserved.
           </div>
 
           <div className="flex items-center gap-1.5 text-slate-400">

@@ -82,9 +82,9 @@ export interface PDStage {
 
 export const portfolioData = {
   personal: {
-    name: "Thummalapenta Bhavya Sri",
+    name: "Tummalapenta Bhavya Sri",
     title: "VLSI Physical Design (PD) Engineer",
-    roleTag: "Physical Design Trainee @ ChipXpert | VLSI Physical Design Specialist",
+    roleTag: "Physical Design Trainee @ ChipXpert",
     subheadline:
       "Specializing in Physical Design, Floorplanning, Power Distribution Networks (PDN), Standard Cell Placement, Clock Tree Synthesis (CTS), Routing, Static Timing Analysis (STA), and Physical Verification (DRC/LVS) using industry-standard EDA tooling.",
     aboutSummary:

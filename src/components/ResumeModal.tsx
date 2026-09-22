@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { X, Download, Printer, ExternalLink, Mail, MapPin, Cpu, Award } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 
@@ -11,6 +11,7 @@ interface ResumeModalProps {
 
 export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const resumeRef = useRef<HTMLDivElement>(null);
+  const [showAllCerts, setShowAllCerts] = useState(false);
 
   if (!isOpen) return null;
 
@@ -21,7 +22,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const handleDownloadText = () => {
     const textContent = `
 ===================================================================
-THUMMALAPENTA BHAVYA SRI — VLSI PHYSICAL DESIGN ENGINEER
+TUMMALAPENTA BHAVYA SRI — VLSI PHYSICAL DESIGN ENGINEER
 ===================================================================
 Email: ${portfolioData.personal.email}
 LinkedIn: ${portfolioData.personal.linkedin}
@@ -86,7 +87,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Thummalapenta_Bhavya_Sri_Resume.txt";
+    link.download = "Tummalapenta_Bhavya_Sri_Resume.txt";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -102,7 +103,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
           <div className="flex items-center gap-2">
             <Cpu className="w-5 h-5 text-cyan-400" />
             <h2 className="text-sm sm:text-base font-semibold text-slate-200">
-              Curriculum Vitae Preview — <span className="text-cyan-400">Thummalapenta Bhavya Sri</span>
+              Curriculum Vitae Preview — <span className="text-cyan-400">Tummalapenta Bhavya Sri</span>
             </h2>
           </div>
           
@@ -143,10 +144,10 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                  Thummalapenta Bhavya Sri
+                  Tummalapenta Bhavya Sri
                 </h1>
                 <p className="text-cyan-400 font-mono text-sm sm:text-base mt-1 font-medium">
-                  Physical Design Trainee @ ChipXpert | VLSI Physical Design Specialist
+                  Physical Design Trainee @ ChipXpert
                 </p>
               </div>
               <div className="flex flex-col gap-1 text-xs sm:text-sm text-slate-400 font-mono">
@@ -274,18 +275,29 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
 
             <div>
               <h3 className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold mb-2 flex items-center gap-2">
-                <Award className="w-3.5 h-3.5" /> Industry Certifications (16+)
+                <Award className="w-3.5 h-3.5" /> Industry Certifications ({portfolioData.certifications.length})
               </h3>
-              <div className="p-2.5 bg-slate-900/80 border border-slate-800 rounded-lg text-xs space-y-1">
-                {portfolioData.certifications.slice(0, 5).map((c) => (
-                  <div key={c.id} className="text-slate-300 flex items-center justify-between text-[11px]">
-                    <span className="truncate pr-2 font-medium">• {c.name}</span>
-                    <span className="text-slate-400 font-mono text-[10px] shrink-0">{c.issuer}</span>
-                  </div>
-                ))}
-                <span className="text-[10px] text-cyan-400 font-mono block pt-1">
-                  + 11 more professional credentials & academy accreditations
-                </span>
+              <div className="p-2.5 bg-slate-900/80 border border-slate-800 rounded-lg text-xs space-y-1.5">
+                <div className={`space-y-1.5 ${showAllCerts ? "max-h-60 overflow-y-auto pr-1" : ""}`}>
+                  {(showAllCerts ? portfolioData.certifications : portfolioData.certifications.slice(0, 5)).map((c) => (
+                    <div key={c.id} className="text-slate-300 flex items-center justify-between text-[11px] hover:text-white transition-colors">
+                      <span className="truncate pr-2 font-medium">• {c.name}</span>
+                      <span className="text-slate-400 font-mono text-[10px] shrink-0">{c.issuer}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setShowAllCerts(!showAllCerts)}
+                  className="w-full text-center py-1.5 px-2 mt-1 bg-cyan-950/60 hover:bg-cyan-900/70 border border-cyan-500/40 hover:border-cyan-400 text-[11px] text-cyan-300 hover:text-cyan-100 font-mono font-medium rounded-md transition-all cursor-pointer flex items-center justify-center gap-1"
+                >
+                  {showAllCerts ? (
+                    <>Show fewer certificates ↑</>
+                  ) : (
+                    <>+ Show all {portfolioData.certifications.length} certificates ({portfolioData.certifications.length - 5} more) ↓</>
+                  )}
+                </button>
               </div>
             </div>
           </div>
@@ -294,7 +306,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
 
         {/* Footer */}
         <div className="px-6 py-3 border-t border-slate-800 bg-[#090d16] flex justify-between items-center text-xs text-slate-400 font-mono">
-          <span>Thummalapenta Bhavya Sri • VLSI Physical Design Engineer</span>
+          <span>Tummalapenta Bhavya Sri • VLSI Physical Design Engineer</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors"
