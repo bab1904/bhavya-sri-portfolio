@@ -22,7 +22,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const handleDownloadText = () => {
     const textContent = `
 ===================================================================
-TUMMALAPENTA BHAVYA SRI — VLSI PHYSICAL DESIGN ENGINEER
+JAJULA BHAVYA SRI — VLSI PHYSICAL DESIGN ENGINEER
 ===================================================================
 Email: ${portfolioData.personal.email}
 LinkedIn: ${portfolioData.personal.linkedin}
@@ -87,7 +87,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Tummalapenta_Bhavya_Sri_Resume.txt";
+    link.download = "Jajula_Bhavya_Sri_Resume.txt";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -103,7 +103,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
           <div className="flex items-center gap-2">
             <Cpu className="w-5 h-5 text-cyan-400" />
             <h2 className="text-sm sm:text-base font-semibold text-slate-200">
-              Curriculum Vitae Preview — <span className="text-cyan-400">Tummalapenta Bhavya Sri</span>
+              Curriculum Vitae Preview — <span className="text-cyan-400">Jajula Bhavya Sri</span>
             </h2>
           </div>
           
@@ -144,7 +144,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                  Tummalapenta Bhavya Sri
+                  Jajula Bhavya Sri
                 </h1>
                 <p className="text-cyan-400 font-mono text-sm sm:text-base mt-1 font-medium">
                   Physical Design Trainee @ ChipXpert
@@ -306,7 +306,7 @@ ${portfolioData.honors.map((h) => `* ${h.title} (${h.year}) — ${h.issuer}\n  $
 
         {/* Footer */}
         <div className="px-6 py-3 border-t border-slate-800 bg-[#090d16] flex justify-between items-center text-xs text-slate-400 font-mono">
-          <span>Tummalapenta Bhavya Sri • VLSI Physical Design Engineer</span>
+          <span>Jajula Bhavya Sri • VLSI Physical Design Engineer</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors"

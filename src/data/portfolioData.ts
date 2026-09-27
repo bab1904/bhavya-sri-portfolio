@@ -82,7 +82,7 @@ export interface PDStage {
 
 export const portfolioData = {
   personal: {
-    name: "Tummalapenta Bhavya Sri",
+    name: "Jajula Bhavya Sri",
     title: "VLSI Physical Design (PD) Engineer",
     roleTag: "Physical Design Trainee @ ChipXpert",
     subheadline:

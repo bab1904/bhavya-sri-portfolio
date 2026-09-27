@@ -27,7 +27,7 @@ export default function About() {
             <span>01. Engineering Profile</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            About <span className="silicon-gradient-text">Tummalapenta Bhavya Sri</span>
+            About <span className="silicon-gradient-text">Jajula Bhavya Sri</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
             Specializing in physical design implementation, floorplanning, CTS, routing, and physical verification signoff.

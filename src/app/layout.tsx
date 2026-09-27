@@ -15,11 +15,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tummalapenta Bhavya Sri | VLSI Physical Design (PD) Engineer",
+  title: "Jajula Bhavya Sri | VLSI Physical Design (PD) Engineer",
   description:
-    "Portfolio of Tummalapenta Bhavya Sri, VLSI Physical Design (PD) Engineer specializing in physical implementation, floorplanning, CTS, routing, STA timing closure, and DRC/LVS physical verification using Cadence Innovus.",
+    "Portfolio of Jajula Bhavya Sri, VLSI Physical Design (PD) Engineer specializing in physical implementation, floorplanning, CTS, routing, STA timing closure, and DRC/LVS physical verification using Cadence Innovus.",
   keywords: [
-    "Tummalapenta Bhavya Sri",
+    "Jajula Bhavya Sri",
     "Bhavya Sri",
     "Physical Design Engineer",
     "VLSI Engineer",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     "DRC LVS",
     "RTL to GDSII",
   ],
-  authors: [{ name: "Tummalapenta Bhavya Sri" }],
+  authors: [{ name: "Jajula Bhavya Sri" }],
   openGraph: {
-    title: "Tummalapenta Bhavya Sri | VLSI Physical Design (PD) Engineer",
+    title: "Jajula Bhavya Sri | VLSI Physical Design (PD) Engineer",
     description:
       "Physical Design Trainee @ ChipXpert | Specializing in physical implementation, floorplanning, CTS, routing, STA timing closure, and physical verification.",
     type: "website",
