@@ -114,7 +114,7 @@ export default function Certifications() {
               Certifications & <span className="amber-gradient-text">Visual Showcase</span>
             </h2>
             <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
-              26+ verified industry credentials extracted in 300 DPI high resolution from global semiconductor academies, Samsung, NIELIT MeitY, Synopsys, IBM, and top engineering bodies.
+              {certificatesList.length}+ verified industry credentials extracted in high resolution from global semiconductor academies, Samsung, NIELIT MeitY, Synopsys, IBM, and top engineering bodies.
             </p>
           </div>
 
@@ -160,7 +160,7 @@ export default function Certifications() {
               <Award className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-lg font-bold text-white font-mono">26+</div>
+              <div className="text-lg font-bold text-white font-mono">{certificatesList.length}+</div>
               <div className="text-[11px] text-slate-400">Total Accreditations</div>
             </div>
           </div>
