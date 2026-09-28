@@ -82,7 +82,7 @@ export interface PDStage {
 
 export const portfolioData = {
   personal: {
-    name: "Jajula Bhavya Sri",
+    name: "Tummalapenta Bhavya Sri",
     title: "VLSI Physical Design (PD) Engineer",
     roleTag: "Physical Design Trainee @ ChipXpert",
     subheadline:
@@ -94,10 +94,10 @@ export const portfolioData = {
     linkedin: "https://linkedin.com/in/bhavya-sri-7b5646291",
     github: "https://github.com/bab1904/bhavya-sri-portfolio",
     languages: [
-      { name: "Telugu", proficiency: "Native" },
-      { name: "English", proficiency: "Fluent / Professional" },
-      { name: "Hindi", proficiency: "Fluent" },
-      { name: "German", proficiency: "Intermediate" },
+      { name: "Telugu", proficiency: "Fluent" },
+      { name: "English", proficiency: "Fluent" },
+      { name: "Hindi", proficiency: "Intermediate" },
+      { name: "German", proficiency: "Beginner" },
     ],
     statusBadge: "Available for VLSI Physical Design (PD) Engineer Roles",
   },
