@@ -9,11 +9,12 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
-import Certifications from "@/components/Certifications";
+import CertificatesCarousel from "@/components/CertificatesCarousel";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ResumeModal from "@/components/ResumeModal";
+import ChatbotWidget from "@/components/ChatbotWidget";
 
 export default function Home() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -34,11 +35,14 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
-        <Certifications />
+        <CertificatesCarousel />
         <Education />
         <Contact onOpenResume={() => setIsResumeOpen(true)} />
         <Footer />
       </div>
+
+      {/* AI Portfolio Assistant Chatbot Widget */}
+      <ChatbotWidget />
 
       {/* Full Curriculum Vitae Modal */}
       <ResumeModal

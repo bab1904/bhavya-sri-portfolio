@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Cpu,
   Terminal,
@@ -21,9 +21,44 @@ interface HeroProps {
   onOpenResume: () => void;
 }
 
+const TYPEWRITER_WORDS = [
+  "VLSI Physical Design",
+  "Floorplanning & PDN",
+  "Clock Tree Synthesis (CTS)",
+  "STA & Timing Closure",
+  "DRC / LVS Signoff",
+];
+
 export default function Hero({ onOpenResume }: HeroProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [activeTab, setActiveTab] = useState<"floorplan" | "timing" | "pnr">("floorplan");
+
+  // Typewriter effect state
+  const [currentWordIdx, setCurrentWordIdx] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const word = TYPEWRITER_WORDS[currentWordIdx];
+    const typingSpeed = isDeleting ? 40 : 80;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && currentText === word) {
+        setTimeout(() => setIsDeleting(true), 1500);
+      } else if (isDeleting && currentText === "") {
+        setIsDeleting(false);
+        setCurrentWordIdx((prev) => (prev + 1) % TYPEWRITER_WORDS.length);
+      } else {
+        setCurrentText(
+          isDeleting
+            ? word.substring(0, currentText.length - 1)
+            : word.substring(0, currentText.length + 1)
+        );
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentWordIdx]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -49,7 +84,7 @@ export default function Hero({ onOpenResume }: HeroProps) {
               <span className="tracking-wide">{portfolioData.personal.statusBadge}</span>
             </div>
 
-            {/* Name and Title */}
+            {/* Name and Title with Animated Typewriter */}
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
                 Hi, I&apos;m{" "}
@@ -58,9 +93,16 @@ export default function Hero({ onOpenResume }: HeroProps) {
                 </span>
               </h1>
               
-              <div className="flex items-center gap-2 text-amber-400 font-mono text-sm sm:text-base font-semibold">
-                <Cpu className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>{portfolioData.personal.roleTag}</span>
+              <div className="flex flex-wrap items-center gap-2 font-mono text-sm sm:text-base">
+                <span className="text-cyan-400 font-semibold flex items-center gap-1.5">
+                  <Cpu className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span>Physical Design Trainee</span>
+                </span>
+                <span className="text-slate-600">•</span>
+                <span className="text-amber-400 font-bold bg-amber-950/40 border border-amber-500/30 px-2.5 py-0.5 rounded-md min-w-[220px]">
+                  {currentText}
+                  <span className="animate-pulse">|</span>
+                </span>
               </div>
             </div>
 
