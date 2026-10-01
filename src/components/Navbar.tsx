@@ -1,23 +1,26 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X, FileText, Send, ChevronRight } from "lucide-react";
+import { Menu, X, FileText, Send, ChevronRight, Terminal } from "lucide-react";
 
 interface NavbarProps {
   onOpenResume: () => void;
+  onToggleTerminal?: () => void;
 }
 
 const navLinks = [
   { name: "About", href: "#about" },
+  { name: "PD Flow", href: "#pd-flow" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+  { name: "RTL Waveforms", href: "#waveform" },
   { name: "Certifications", href: "#certifications" },
   { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
 ];
 
-export default function Navbar({ onOpenResume }: NavbarProps) {
+export default function Navbar({ onOpenResume, onToggleTerminal }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -80,14 +83,14 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-[#0d1424]/80 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-sm shadow-inner">
+          <nav className="hidden xl:flex items-center gap-1 bg-[#0d1424]/80 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-sm shadow-inner">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
+                  className={`px-3 py-1 text-xs font-medium rounded-full transition-all duration-200 ${
                     isActive
                       ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]"
                       : "text-slate-300 hover:text-white hover:bg-slate-800/60"
@@ -100,10 +103,20 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
+            {/* Linux Terminal Mode Trigger */}
+            <button
+              onClick={onToggleTerminal}
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-mono font-bold text-cyan-300 bg-[#0a1120] hover:bg-cyan-950/60 border border-cyan-500/40 hover:border-cyan-400 rounded-xl transition-all shadow-[0_0_12px_rgba(6,182,212,0.15)] group"
+              title="Launch Interactive Linux Terminal Shell"
+            >
+              <Terminal className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
+              <span>&gt;_ Terminal</span>
+            </button>
+
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-mono font-medium text-slate-200 bg-slate-800/90 hover:bg-slate-700/90 hover:text-cyan-300 border border-slate-700 hover:border-cyan-500/40 rounded-xl transition-all shadow-sm group"
+              className="inline-flex items-center gap-2 px-3 py-2 text-xs font-mono font-medium text-slate-200 bg-slate-800/90 hover:bg-slate-700/90 hover:text-cyan-300 border border-slate-700 hover:border-cyan-500/40 rounded-xl transition-all shadow-sm group"
             >
               <FileText className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
               <span>Resume</span>
@@ -111,7 +124,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.35)] hover:shadow-[0_0_22px_rgba(6,182,212,0.6)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-mono font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.35)] hover:shadow-[0_0_22px_rgba(6,182,212,0.6)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <Send className="w-3.5 h-3.5 text-slate-950" />
               <span>Get in Touch</span>
@@ -120,6 +133,14 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
 
           {/* Mobile Menu Trigger */}
           <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={onToggleTerminal}
+              className="p-2 text-cyan-400 bg-slate-800/80 border border-cyan-500/40 rounded-lg sm:hidden"
+              aria-label="Terminal Shell"
+              title="Launch Terminal"
+            >
+              <Terminal className="w-4 h-4" />
+            </button>
             <button
               onClick={onOpenResume}
               className="p-2 text-cyan-400 bg-slate-800/80 border border-slate-700 rounded-lg sm:hidden"
@@ -142,36 +163,46 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-x-0 top-[60px] bg-[#090d16]/98 border-b border-cyan-500/20 backdrop-blur-xl p-6 shadow-2xl transition-all animate-in fade-in slide-in-from-top-4">
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-2.5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-cyan-500/10 hover:text-cyan-300 border border-transparent hover:border-cyan-500/20 transition-all"
+                className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-cyan-500/10 hover:text-cyan-300 border border-transparent hover:border-cyan-500/20 transition-all"
               >
                 <span>{link.name}</span>
                 <ChevronRight className="w-4 h-4 text-cyan-400/50" />
               </a>
             ))}
 
-            <div className="pt-4 mt-2 border-t border-slate-800 grid grid-cols-2 gap-3">
+            <div className="pt-4 mt-2 border-t border-slate-800 grid grid-cols-3 gap-2">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onToggleTerminal?.();
+                }}
+                className="flex items-center justify-center gap-1.5 py-2.5 px-2 text-xs font-mono font-bold text-cyan-300 bg-[#0a1120] rounded-xl border border-cyan-500/40"
+              >
+                <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                Terminal
+              </button>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenResume();
                 }}
-                className="flex items-center justify-center gap-2 py-3 px-4 text-xs font-mono font-medium text-slate-200 bg-slate-800 rounded-xl border border-slate-700"
+                className="flex items-center justify-center gap-1.5 py-2.5 px-2 text-xs font-mono font-medium text-slate-200 bg-slate-800 rounded-xl border border-slate-700"
               >
-                <FileText className="w-4 h-4 text-cyan-400" />
+                <FileText className="w-3.5 h-3.5 text-cyan-400" />
                 Resume
               </button>
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 py-3 px-4 text-xs font-mono font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.4)]"
+                className="flex items-center justify-center gap-1.5 py-2.5 px-2 text-xs font-mono font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.4)]"
               >
-                <Send className="w-4 h-4" />
+                <Send className="w-3.5 h-3.5" />
                 Contact
               </a>
             </div>

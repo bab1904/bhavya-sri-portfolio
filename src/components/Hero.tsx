@@ -19,17 +19,18 @@ import { portfolioData } from "@/data/portfolioData";
 
 interface HeroProps {
   onOpenResume: () => void;
+  onToggleTerminal?: () => void;
 }
 
 const TYPEWRITER_WORDS = [
-  "VLSI Physical Design",
-  "Floorplanning & PDN",
-  "Clock Tree Synthesis (CTS)",
-  "STA & Timing Closure",
-  "DRC / LVS Signoff",
+  "VLSI Physical Design Trainee @ ChipXpert",
+  "RTL & FPGA Engineer",
+  "Clock Tree Synthesis (CTS) & Timing Closure",
+  "Cadence Innovus & Genus Implementation",
+  "Physical Verification (DRC / LVS)",
 ];
 
-export default function Hero({ onOpenResume }: HeroProps) {
+export default function Hero({ onOpenResume, onToggleTerminal }: HeroProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [activeTab, setActiveTab] = useState<"floorplan" | "timing" | "pnr">("floorplan");
 
@@ -129,11 +130,20 @@ export default function Hero({ onOpenResume }: HeroProps) {
                 <span>View Full CV</span>
               </button>
 
+              <button
+                onClick={onToggleTerminal}
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-mono text-xs sm:text-sm font-bold text-cyan-300 bg-[#0a1120] hover:bg-cyan-950/70 border border-cyan-500/40 hover:border-cyan-400 transition-all shadow-[0_0_15px_rgba(6,182,212,0.2)] group"
+                title="Launch Interactive Linux Shell"
+              >
+                <Terminal className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <span>&gt;_ Terminal Shell</span>
+              </button>
+
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-mono text-xs sm:text-sm font-semibold text-slate-300 hover:text-white bg-slate-800/40 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-mono text-xs sm:text-sm font-semibold text-slate-300 hover:text-white bg-slate-800/40 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 transition-all"
               >
-                <span>Contact Me</span>
+                <span>Contact</span>
               </a>
             </div>
 
